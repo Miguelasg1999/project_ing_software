@@ -1,0 +1,12 @@
+{% extends "admin/base_admin.html" %}
+
+{% block content %}
+    <h1>ON TOUR - SESIÓN DE AMINISTRADOR</h1>
+
+    {% if user.is_authenticated %}
+        <h2>¡Bienvenido de vuelta {{user.username}}!</h2>
+    {% else %}
+        <h2>¡Bienvenido!</h2>
+    {% endif %}
+    
+{% endblock %}

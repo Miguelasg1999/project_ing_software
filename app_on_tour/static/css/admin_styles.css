@@ -1,0 +1,94 @@
+body{
+    color: black;
+}
+
+nav{
+    background: #242f5d;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    align-items: center;
+}
+
+nav .sesion img{
+    height: 40px;
+    border-radius: 3px;
+    margin-right: 15px;
+}
+
+.sesion{
+    list-style: none;
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.sesion2{
+    list-style: none;
+    width: 40%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+ul li a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+ul li a:hover{
+    color: white;
+    text-decoration: underline;
+}
+
+h1{
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 40px;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
+}
+
+h2{
+    text-align: center;
+}
+
+.form-signin, .form-signup{
+    background: #242f5d;
+    width: 40%;
+    margin: auto;
+    color: white;
+    border-radius: 5px;
+    padding: 30px;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+
+.h2-signin, .h2-signup{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.form-signin button, .form-signup button {
+    width: 100%;
+    padding: 10px;
+}
+
+.form-signup .helptext, .form-signup ul{
+    display: none;
+}
+
+.error-mssg {
+    color: red;
+}
+
+.h2-course{
+    margin: 40px 0px;
+}
+
+.cantidad-alumnos{
+    text-align: center;
+}

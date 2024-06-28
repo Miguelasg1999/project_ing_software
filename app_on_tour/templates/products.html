@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="product-description">
+  <p>En nuestra agencia, nos dedicamos a garantizar que nuestros clientes disfruten de viajes sin complicaciones y experiencias inolvidables. Para lograrlo, ofrecemos una selección de productos y servicios de la más alta calidad. ¿Qué puedes esperar para elegirlos?</p>
+
+  <p>Confía en nosotros para que tu próximo viaje sea excepcional. Nuestra pasión por los detalles y nuestro compromiso con la excelencia nos distinguen. ¡Bienvenido a una experiencia de viaje sin igual! 🌎✨</p>
+</div>
+
+
+<h2 class="h2-products">Nuestros productos</h2>
+
+<div class="container-card">
+    <div class="card">
+        <img src="{% static 'images/rodillo_quitapelusas.jpg' %}" class="card-img-top" alt="Imagen de rodillo">
+        <div class="card-body">
+          <h5 class="card-title">Rodillo quitapelusas</h5>
+          <p class="card-text" style="color:black;">Carteras con bloqueo RFID: En el mundo digital actual, proteger su información personal es primordial. Nuestras carteras con bloqueo RFID están diseñadas con tecnología de vanguardia para salvaguardar sus datos confidenciales de escaneos no autorizados y robo de identidad. Viaje con confianza, sabiendo que sus tarjetas de crédito, pasaportes y otros documentos importantes están seguros dentro de nuestras carteras elegantes y funcionales.</p>
+          <p class="btn-card">
+            <a href="#" class="btn btn-secondary">Comprar</a>
+          <p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="{% static 'images/cartera_rfid.jpeg' %}" class="card-img-top" alt="Imagen de cartera">
+        <div class="card-body">
+          <h5 class="card-title">Cartera con bloqueo RFID</h5>
+          <p class="card-text">Bandas antimareos: No permita que el mareo le impida explorar el mundo. Nuestras bandas antimareos utilizan técnicas de acupresión comprobadas para aliviar el malestar y las náuseas durante sus viajes. Ya sea que esté en un avión, un crucero o una carretera sinuosa, estas bandas ofrecen una solución natural y efectiva, que le permite disfrutar plenamente de su viaje.</p>
+          <p class="btn-card">
+            <a href="#" class="btn btn-secondary">Comprar</a>
+          <p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="{% static 'images/banda_antimareo.jpeg' %}" class="card-img-top" alt="Imagen de banda antimareo">
+        <div class="card-body">
+          <h5 class="card-title">Banda antimareos</h5>
+          <p class="card-text">Rodillo quitapelusas de tamaño de viaje: Una apariencia pulida es esencial, incluso cuando está de viaje. Nuestro rodillo quitapelusas de tamaño de viaje es una herramienta compacta pero potente que garantiza que baje del avión, tren o automóvil luciendo lo mejor posible. Dígale adiós a las molestas pelusas, pelos de mascotas y pelusas, y déle la bienvenida a una apariencia limpia y ordenada sin importar dónde se encuentre.</p>
+          <p class="btn-card">
+            <a href="#" class="btn btn-secondary">Comprar</a>
+          <p>
+        </div>
+    </div>
+</div>
+{% endblock %}
