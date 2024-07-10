@@ -92,3 +92,13 @@ h2{
 .cantidad-alumnos{
     text-align: center;
 }
+
+.btn-edit{
+    background-color: #343f7f;
+    color: #fff;
+}
+
+.btn-edit:hover {
+    background-color: #242f5d;
+    color: white;
+}

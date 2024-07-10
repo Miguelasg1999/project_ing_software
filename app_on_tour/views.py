@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
-from .forms import FormularioCurso
+from .forms import FormularioCurso, EditarFormularioCurso
 from .models import Curso
 
 #------------------------CLIENT-------------------------
@@ -68,7 +68,7 @@ def register_course(request):
         form = {'form': FormularioCurso}
         return render(request, 'admin/register_course.html', form)
     else:
-        curso = Curso.objects.create(colegio=request.POST['colegio'],nivel_curso=request.POST['nivel_curso'],cantidad_alumnos=request.POST['cantidad_alumnos'],servicio=request.POST['servicio'],destino=request.POST['destino'], fecha_viaje=request.POST['fecha_viaje'],monto_depositado=request.POST['monto_depositado'],meta_monto=request.POST['meta_monto'], id_cliente_id=request.POST['id_cliente'])
+        curso = Curso.objects.create(colegio=request.POST['colegio'],nivel_curso=request.POST['nivel_curso'],cantidad_alumnos=request.POST['cantidad_alumnos'],servicio=request.POST['servicio'],destino=request.POST['destino'], fecha_viaje=request.POST['fecha_viaje'],monto_depositado=request.POST['monto_depositado'],meta_monto=int(request.POST['cantidad_alumnos']) * 500000, id_cliente_id=request.POST['id_cliente'])
         curso.save()
         return redirect('list_course')
 
@@ -122,4 +122,26 @@ def admin_signout(request):
     logout(request)
     return redirect('admin_index')
 
+def edit_reg(request, id):
+    curso = Curso.objects.get(pk=id)
+    if request.method == "GET":
+        form = EditarFormularioCurso(instance=curso)
+        return render(request, 'admin/edit_reg.html',{
+            'form': form,
+            'curso': curso
+        })
+    else:
+        curso.colegio = request.POST['colegio']
+        curso.nivel_curso = request.POST['nivel_curso']
+        curso.cantidad_alumnos = request.POST['cantidad_alumnos']
+        curso.servicio = request.POST['servicio']
+        curso.destino = request.POST['destino']
+        curso.id_cliente_id = request.POST['id_cliente']
+        curso.meta_monto = int(request.POST['cantidad_alumnos']) * 500000
+        curso.save()
+        return redirect('list_course')
+
+def delete_reg(request, id):
+    Curso.objects.get(pk=id).delete()
+    return redirect('list_course')
 #------------------------------------------------------
